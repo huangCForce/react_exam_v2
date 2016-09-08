@@ -1,0 +1,226 @@
+
+.rootView{
+    position: relative;
+    background: url(../img/background.png);
+    -webkit-background-size:100%;
+    z-index:1;
+}
+
+.div-hidden {
+    display: none;
+}
+
+/**=================分层样式 ================== */
+.div-level {
+    position: relative;
+}
+
+.level-background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/**=================顶部样式 ================== */
+.treasure-box {
+    width: 40px;
+    height: 40px;
+}
+
+.treasure-title {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: -3px;
+}
+
+.treasure-table {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.div-feeder {
+    float: right;
+    margin: 10px;
+}
+
+.circle-bg {
+    margin: 5px;
+    padding: 8px;
+    background-size: 100%;
+    background-image: url(../img/circle-background.png);
+    background-repeat: no-repeat;
+}
+
+/**=================关卡样式 ================== */
+.div-level-view{
+    display: flex;
+    justify-content: space-around;
+    width: 100%; height: 0;
+    padding-bottom: 25%;
+}
+
+.div-rank-empty-view{
+
+}
+
+.div-rank-view {
+    position: relative;
+    background-color:black;
+}
+
+.div-rank-day-view {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    text-align: center;
+}
+
+.img-day {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    z-index: -1;
+    right: 4px;
+    top:15px;
+}
+
+.img-day-num {
+    position: relative;
+    top: 28px;
+    width: auto;
+    height: 20px;
+    left:3px;
+}
+
+.div-star-view {
+    position: relative;
+    margin-top: 5px;
+    width: 100%;
+    height: 20px;
+    left:3px;
+    text-align: center;
+}
+
+.img-star {
+    width: 14px;
+    height: 14px;
+    margin: 2px;
+}
+
+/**=================设定宽高比================= */
+.div-head-view {
+    position: fixed;
+    width: 100%;
+    height: 105px;
+    z-index: 1;
+}
+
+.div-head-view2 {
+    position: fixed;
+    width: 100%;
+    height: 105px;
+    z-index: 2;
+}
+
+.div-level-one-view {
+    width: 100%;
+    height: 0;
+    padding-bottom: 35%;
+}
+
+.div-level-35-view {
+    width: 100%;
+    height: 0;
+    padding-bottom: 35%;
+}
+
+.div-level-40-view {
+    width: 100%;
+    height: 0;
+    padding-bottom: 40%;
+}
+
+.div-level-50-view {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+}
+
+.dialogCover {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+    opacity: 0.45;
+}
+
+.dialog {
+    position: fixed;
+    display: none;
+    z-index: 3;
+    left:50%;
+    top:20%;
+    width: 200px;
+    margin-left: -100px;
+}
+
+.div-close-dialog {
+    position: relative;
+    text-align: right;
+}
+
+.img-close-dialog {
+    width: 20px;
+    height: 20px;
+}
+
+.img-box-open {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.div-box-title {
+    font-size: 1.1em;
+    color: #FCC328;
+    text-align: center;
+    padding: 10px;
+    font-weight:bold;
+}
+
+.img-take-btn {
+    position: absolute;
+    width: 200px;
+    height: 34px;
+    border-radius: 20px;
+    border: 2px solid #FDDE8B;
+    background-color: #F9CE5B;
+    color: #712222;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/**=================Toast================= */
+#toast {
+    position: fixed;
+    bottom: 100px;
+    width: 60%;
+    left: 15%;
+    border-radius:30px;
+    background-color: black;
+    opacity: 0.9;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    -webkit-transition: opacity 0.5s ease-out;
+    display:block;
+    word-break: break-all;
+    word-wrap: break-word;
+}
