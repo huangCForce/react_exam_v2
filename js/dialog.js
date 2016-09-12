@@ -1,3 +1,5 @@
+'use strict'
+
 var intervalCounter = 0;
 function hideToast() {
     var alert = document.getElementById("toast");
@@ -14,4 +16,9 @@ function drawToast(message) {
         alert.style.opacity = .9;
     }
     intervalCounter = setInterval("hideToast()", 2000);
+}
+
+module.exports = {
+    hideToast:hideToast,
+    drawToast:drawToast
 }

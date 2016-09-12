@@ -1,4 +1,4 @@
-
+'use strict';
 
 var sUserAgent = navigator.userAgent.toLowerCase();
 var isIphoneOs = sUserAgent.match(/iphone os/i) == "1iphone os";
@@ -174,6 +174,16 @@ function getQueryString(name) {
 	return null;
 }
 
+module.exports = {
+	renderToRule4H5:renderToRule4H5,
+	renderToPlay4H5:renderToPlay4H5,
+	renderToCommunityChat4H5:renderToCommunityChat4H5,
+	getMainExam:getMainExam,
+	getPreBox:getPreBox,
+	showLoading:showLoading,
+	hideLoading:hideLoading
+}
+
 var resultTwo= {
 	"data": "",
 	"errorMsg": "err",
@@ -347,7 +357,7 @@ var resultOne = {
 			{
 				"levelNo":"18",
 				"examId":"18",
-				"state":"2",
+				"state":"1",
 				"join":"",
 				"answerSec":"10",
 				"questionCount":"5"

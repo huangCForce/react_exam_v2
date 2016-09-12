@@ -1,6 +1,8 @@
 
 import React from 'react'
 import RankView from './RankView'
+import api from './communication'
+import Toast from './dialog'
 require("!style!css!../css/app.css");
 require("!style!css!../css/loading.css");
 require("!style!css!../css/animate.css");
@@ -25,20 +27,20 @@ var TreasureView = React.createClass({
                 //网页链接
                 window.location.href = this.props.energyAddr;
             } else {
-                renderToCommunityChat4H5(this.props.energyAddr);
+                api.renderToCommunityChat4H5(this.props.energyAddr);
             }
         }
     },
     confirm: function () {
         this.cancel();
-        showLoading();
-        getPreBox(memberId, this.props.box.preciousBoxId, function (result) {
+        api.showLoading();
+        api.getPreBox('', this.props.box.preciousBoxId, function (result) {
             console.log(result)
-            hideLoading();
+            api.hideLoading();
             this.setState({boxState: "2"});
         }.bind(this), function (msg) {
-            hideLoading();
-            drawToast(msg);
+            api.hideLoading();
+            Toast.drawToast(msg);
         });
     },
     getInitialState: function () {
@@ -241,16 +243,16 @@ var LevelBottom = React.createClass({
 
 var RootView = React.createClass({
     InitData: function () {
-        getMainExam(memberId, moduleId, function (result) {
+        api.getMainExam('', '', function (result) {
             prompt = result.prompt;
             this.setState({examInfo: result});
             this.setState({loading: false});
             if (result.rule) {
-                renderToRule4H5(result.rule);
+                api.renderToRule4H5(result.rule);
             }
         }.bind(this), function (msg) {
-            drawToast(msg);
-            hideLoading();
+            Toast.drawToast(msg);
+            api.hideLoading();
         });
     },
 
@@ -266,13 +268,13 @@ var RootView = React.createClass({
     },
     render: function () {
         if (this.state.loading) {
-            showLoading();
+            api.showLoading();
             return (
                 <div>
                 </div>
             )
         } else {
-            hideLoading();
+            api.hideLoading();
 
             var length = parseInt(this.state.examInfo.examList.length);
             var levelRow = (length > 9) ? (Math.round((length - 6)/6) ): 0;

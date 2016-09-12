@@ -1,5 +1,6 @@
 import React from 'react'
 import StarView from './StarView'
+import api from './communication'
 
 //关卡视图
 var RankView = React.createClass({
@@ -10,7 +11,7 @@ var RankView = React.createClass({
             var answerSec = this.props.exam.answerSec;
             var questionCount = this.props.exam.questionCount;
 
-            renderToPlay4H5(examId, answerSec, questionCount, this.props.prompt);
+            api.renderToPlay4H5(examId, answerSec, questionCount, this.props.prompt);
         }
     },
 
